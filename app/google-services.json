@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "90482774520",
+    "project_id": "haatbazar-763d7",
+    "storage_bucket": "haatbazar-763d7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90482774520:android:c93343a9977fd15836860d",
+        "android_client_info": {
+          "package_name": "com.esports.haatbazar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY_4V1HkDvcunvc-90raMKD4Po1reTUU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
