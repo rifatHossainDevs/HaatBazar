@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.starter.StartFragment"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+
+    <ImageView
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:src="@drawable/logo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:fontFamily="@font/bebas_neue"
+        android:gravity="center"
+        android:text="@string/wellcome_message"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textColor="#E64A4A"
+        android:textSize="@dimen/_28sdp" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="#FF304F"
+        app:strokeWidth="@dimen/_2sdp"
+        android:textColor="#040E47"
+        android:text="@string/login"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_112sdp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:backgroundTint="#FF304F"
+        />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="#801C1C"
+        app:strokeWidth="@dimen/_2sdp"
+        android:textColor="#040E47"
+        android:text="@string/register"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        />
+
+</LinearLayout>

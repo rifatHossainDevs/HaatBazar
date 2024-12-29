@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">HaatBazar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wellcome_message">Wellcome to HatBazaar</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="login_to_let_s_buy">Login to HatBazaar</string>
+    <string name="register_to_let_s_buy">Register to HatBazaar</string>
+    <string name="user_email">user email</string>
+    <string name="user_password">user password</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="user_name">user name</string>
+    <string name="customer">Customer</string>
+    <string name="seller">Seller</string>
+    <string name="admin">Admin</string>
+    <string name="already_have_an_account">Already have an account?</string>
 </resources>
