@@ -127,6 +127,15 @@
             android:textSize="@dimen/_14sdp" />
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:text="errorMessge"
+        android:visibility="gone"
+        android:textColor="#FF0202"/>
+
     <Button
         android:id="@+id/btn_register"
         style="?attr/materialButtonOutlinedStyle"
