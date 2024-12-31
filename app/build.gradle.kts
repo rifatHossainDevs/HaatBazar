@@ -47,9 +47,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.firebase.analytics)
 
     //Firebase
+    implementation(libs.firebase.analytics)
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
     implementation(libs.firebase.firestore)
@@ -67,7 +67,8 @@ dependencies {
     implementation(libs.sdp.android)
     implementation(libs.ssp.android)
 
-    implementation (libs.lottie)
+    //lottie
+    implementation(libs.lottie)
 
-    implementation (libs.androidx.lifecycle.extensions)
+    implementation(libs.androidx.lifecycle.extensions)
 }

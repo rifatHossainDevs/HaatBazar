@@ -1,41 +1,40 @@
 package com.esports.haatbazar.view.register
 
-import android.annotation.SuppressLint
-import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.esports.haatbazar.Base.BaseFragment
 import com.esports.haatbazar.R
 import com.esports.haatbazar.core.DataState
 import com.esports.haatbazar.databinding.FragmentRegisterBinding
 import com.google.android.material.button.MaterialButtonToggleGroup
 
 
-class RegisterFragment : Fragment() {
-    private lateinit var binding: FragmentRegisterBinding
+class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterBinding::inflate) {
+
     val viewModel: RegistrationViewModel by viewModels()
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        binding = FragmentRegisterBinding.inflate(layoutInflater, container, false)
 
+    override fun setAllClickListener() {
         setClickListener()
-        registrationObserver()
+    }
 
-        return binding.root
+    override fun allObserver() {
+        registrationObserver()
     }
 
     private fun registrationObserver() {
         viewModel.registrationResponce.observe(viewLifecycleOwner) {
             when (it) {
-                is DataState.Error -> Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
-                is DataState.Loading -> Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT)
-                    .show()
+                is DataState.Error -> {
+                    Toast.makeText(context, "Error: ${it.message}", Toast.LENGTH_SHORT).show()
+                    loading.dismiss()
+                }
+                is DataState.Loading -> {
+                    Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT)
+                        .show()
+                    loading.show()
+                }
 
                 is DataState.Success -> {
                     Toast.makeText(
@@ -43,6 +42,7 @@ class RegisterFragment : Fragment() {
                         "Registration Successful for ${it.Data}",
                         Toast.LENGTH_SHORT
                     ).show()
+                    loading.dismiss()
                     findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
                 }
             }
@@ -69,7 +69,6 @@ class RegisterFragment : Fragment() {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     private fun checkAllFieldValidity(): Boolean {
         val name = binding.etName.text.toString()
         val email = binding.etEmail.text.toString()

@@ -1,41 +1,42 @@
 package com.esports.haatbazar.view.login
 
-import android.os.Bundle
 import android.util.Patterns
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.esports.haatbazar.Base.BaseFragment
 import com.esports.haatbazar.R
 import com.esports.haatbazar.core.DataState
 import com.esports.haatbazar.databinding.FragmentLoginBinding
 
-class LoginFragment : Fragment() {
-    lateinit var binding: FragmentLoginBinding
-    val viewModel: LoginViewModel by viewModels()
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
+class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
+    private val viewModel: LoginViewModel by viewModels()
+
+    override fun setAllClickListener() {
         setClickListener()
+    }
+
+    override fun allObserver() {
         registrationObserver()
-        return binding.root
     }
 
     private fun registrationObserver() {
         viewModel.loginResponce.observe(viewLifecycleOwner) {
             when (it) {
-                is DataState.Error -> Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
-                is DataState.Loading -> Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT)
-                    .show()
+                is DataState.Error -> {
+                    Toast.makeText(context, "Email and Password Does not match", Toast.LENGTH_SHORT).show()
+                    loading.dismiss()
+                }
+                is DataState.Loading -> {
+                    Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT)
+                        .show()
+                    loading.show()
+                }
 
                 is DataState.Success -> {
                     Toast.makeText(context, "Login Successful...", Toast.LENGTH_SHORT).show()
+                    loading.dismiss()
                     findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
                 }
             }
