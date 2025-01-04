@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
+    kotlin("kapt")
+    alias(libs.plugins.hiltAndroid)
 }
 
 android {
@@ -70,5 +72,10 @@ dependencies {
     //lottie
     implementation(libs.lottie)
 
+    //viewModel
     implementation(libs.androidx.lifecycle.extensions)
+
+    //Dagger-Hilt
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
 }
