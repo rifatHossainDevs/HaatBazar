@@ -5,8 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.esports.haatbazar.core.DataState
 import com.esports.haatbazar.data.AuthService
+import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class LoginViewModel: ViewModel() {
+@HiltViewModel
+class LoginViewModel @Inject constructor(private val authService: AuthService): ViewModel() {
 
     private val _loginResponce = MutableLiveData<DataState<LoginUser>>()
 
@@ -15,7 +19,6 @@ class LoginViewModel: ViewModel() {
     fun loginUser(user: LoginUser){
         _loginResponce.postValue(DataState.Loading())
 
-        val authService = AuthService()
 
         authService.userLogin(user).addOnSuccessListener {
             _loginResponce.postValue(DataState.Success(user))

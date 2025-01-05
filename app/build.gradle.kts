@@ -40,6 +40,10 @@ android {
     viewBinding {
         enable = true
     }
+
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {

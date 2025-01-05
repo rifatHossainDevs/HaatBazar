@@ -4,7 +4,9 @@ import androidx.navigation.fragment.findNavController
 import com.esports.haatbazar.Base.BaseFragment
 import com.esports.haatbazar.R
 import com.esports.haatbazar.databinding.FragmentStartBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StartFragment : BaseFragment<FragmentStartBinding>(FragmentStartBinding::inflate) {
 
     override fun setAllClickListener() {

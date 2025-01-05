@@ -9,8 +9,9 @@ import com.esports.haatbazar.R
 import com.esports.haatbazar.core.DataState
 import com.esports.haatbazar.databinding.FragmentRegisterBinding
 import com.google.android.material.button.MaterialButtonToggleGroup
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterBinding::inflate) {
 
     val viewModel: RegistrationViewModel by viewModels()

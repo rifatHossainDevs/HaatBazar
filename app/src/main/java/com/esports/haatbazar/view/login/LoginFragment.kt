@@ -8,7 +8,9 @@ import com.esports.haatbazar.Base.BaseFragment
 import com.esports.haatbazar.R
 import com.esports.haatbazar.core.DataState
 import com.esports.haatbazar.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
     private val viewModel: LoginViewModel by viewModels()
