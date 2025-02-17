@@ -20,10 +20,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     }
 
     override fun allObserver() {
-        registrationObserver()
+        loginObserver()
     }
 
-    private fun registrationObserver() {
+    private fun loginObserver() {
         viewModel.loginResponce.observe(viewLifecycleOwner) {
             when (it) {
                 is DataState.Error -> {
@@ -58,6 +58,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
         binding.btnRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+
+        binding.forgetPasswordTv.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_ForgetPasswordFragment)
         }
     }
 

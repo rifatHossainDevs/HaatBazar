@@ -1,5 +1,6 @@
 package com.esports.haatbazar.view.register
 
+import android.annotation.SuppressLint
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -31,6 +32,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                     Toast.makeText(context, "Error: ${it.message}", Toast.LENGTH_SHORT).show()
                     loading.dismiss()
                 }
+
                 is DataState.Loading -> {
                     Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT)
                         .show()
@@ -51,9 +53,25 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
     }
 
     private fun setClickListener() {
+        /*var selectedId: String? = null
+
+        binding.toggleButton.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                selectedId = when (checkedId) {
+                    binding.btnCustomer.id -> binding.btnCustomer.text.toString()
+                    binding.btnSeller.id -> binding.btnSeller.text.toString()
+                    binding.btnAdmin.id -> binding.btnAdmin.text.toString()
+                    else -> null
+                }
+            } else if (selectedId != null && group.checkedButtonId == View.NO_ID) {
+                selectedId = null
+            }
+        }*/
+
         binding.btnRegister.setOnClickListener {
             checkAllFieldValidity()
             if (checkAllFieldValidity()) {
+                //val userType = selectedId ?: "Unknown"
                 val user = RegisterUser(
                     binding.etName.text.toString(),
                     binding.etEmail.text.toString(),
@@ -70,6 +88,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun checkAllFieldValidity(): Boolean {
         val name = binding.etName.text.toString()
         val email = binding.etEmail.text.toString()

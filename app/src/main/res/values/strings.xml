@@ -15,4 +15,5 @@
     <string name="seller">Seller</string>
     <string name="admin">Admin</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="logout">logout</string>
 </resources>

@@ -74,13 +74,23 @@
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/forgetPasswordTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ForgetPasword?"
+        android:gravity="start"
+        android:layout_marginHorizontal="@dimen/_34sdp"
+        android:textColor="#079BE0"/>
+
+
     <Button
         android:id="@+id/btn_login"
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
-        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_28sdp"
         android:backgroundTint="#FF304F"
         android:text="@string/login"
         android:textColor="#040E47"
