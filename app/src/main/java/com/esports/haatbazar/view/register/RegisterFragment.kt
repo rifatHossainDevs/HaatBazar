@@ -26,7 +26,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
     }
 
     private fun registrationObserver() {
-        viewModel.registrationResponce.observe(viewLifecycleOwner) {
+        viewModel.registrationResponse.observe(viewLifecycleOwner) {
             when (it) {
                 is DataState.Error -> {
                     Toast.makeText(context, "Error: ${it.message}", Toast.LENGTH_SHORT).show()

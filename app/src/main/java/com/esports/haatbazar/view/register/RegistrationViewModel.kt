@@ -1,5 +1,6 @@
 package com.esports.haatbazar.view.register
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.esports.haatbazar.core.DataState
@@ -10,12 +11,12 @@ import javax.inject.Inject
 @HiltViewModel
 class RegistrationViewModel @Inject constructor(private val authRepository: AuthRepository) :
     ViewModel() {
-    private val _registrationResponce = MutableLiveData<DataState<RegisterUser>>()
+    private val _registrationResponse = MutableLiveData<DataState<RegisterUser>>()
 
-    val registrationResponce: MutableLiveData<DataState<RegisterUser>> = _registrationResponce
+    val registrationResponse: LiveData<DataState<RegisterUser>> = _registrationResponse
 
     fun userRegister(user: RegisterUser) {
-        _registrationResponce.postValue(DataState.Loading())
+        _registrationResponse.postValue(DataState.Loading())
 
         authRepository.userRegistration(user).addOnSuccessListener {
 
@@ -24,15 +25,15 @@ class RegistrationViewModel @Inject constructor(private val authRepository: Auth
                 user.userId = createdUser.uid
 
                 authRepository.createUser(user).addOnSuccessListener {
-                    _registrationResponce.postValue(DataState.Success(user))
+                    _registrationResponse.postValue(DataState.Success(user))
 
                 }.addOnFailureListener {
-                    _registrationResponce.postValue(DataState.Error(it.message))
+                    _registrationResponse.postValue(DataState.Error(it.message))
                 }
             }
 
         }.addOnFailureListener {
-            _registrationResponce.postValue(DataState.Error(it.message))
+            _registrationResponse.postValue(DataState.Error(it.message))
 
 
         }
