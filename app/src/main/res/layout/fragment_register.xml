@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.register.RegisterFragment"
-    android:orientation="vertical"
+    android:background="#FFF"
     android:gravity="center"
-    android:background="#FFF">
+    android:orientation="vertical"
+    tools:context=".view.register.RegisterFragment">
 
     <ImageView
         android:layout_width="@dimen/_200sdp"
@@ -18,10 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
-        android:fontFamily="@font/bebas_neue"
-        android:layout_marginBottom="@dimen/_12sdp"
-        android:gravity="center"
         android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:fontFamily="@font/bebas_neue"
+        android:gravity="center"
         android:text="@string/register_to_let_s_buy"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:textColor="#FF304F"
@@ -133,8 +133,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:text="errorMessge"
-        android:visibility="gone"
-        android:textColor="#FF0202"/>
+        android:textColor="#FF0202"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/btn_register"
@@ -149,8 +149,6 @@
         android:textSize="@dimen/_16sdp"
         app:strokeColor="#FF304F"
         app:strokeWidth="@dimen/_2sdp" />
-
-
 
     <TextView
         android:layout_width="match_parent"
