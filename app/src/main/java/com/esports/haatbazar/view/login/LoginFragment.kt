@@ -27,9 +27,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         viewModel.loginResponce.observe(viewLifecycleOwner) {
             when (it) {
                 is DataState.Error -> {
-                    Toast.makeText(context, "Email and Password Does not match", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Email and Password Does not match", Toast.LENGTH_SHORT)
+                        .show()
                     loading.dismiss()
                 }
+
                 is DataState.Loading -> {
                     Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT)
                         .show()
