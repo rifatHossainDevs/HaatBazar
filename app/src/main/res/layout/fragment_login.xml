@@ -26,6 +26,7 @@
         android:textSize="@dimen/_28sdp" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
@@ -36,8 +37,7 @@
         app:helperTextEnabled="true"
         app:helperTextTextColor="#FB0101"
         app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
-        android:id="@+id/emailInputLayout">
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email"
@@ -50,6 +50,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
@@ -61,8 +62,7 @@
         app:helperTextEnabled="true"
         app:helperTextTextColor="#FB0101"
         app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
-        android:id="@+id/passwordInputLayout">
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_password"
@@ -78,9 +78,9 @@
         android:id="@+id/forgetPasswordTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/forgetpasword"
         android:layout_marginHorizontal="@dimen/_34sdp"
-        android:textColor="#079BE0"/>
+        android:text="@string/forgetpasword"
+        android:textColor="#079BE0" />
 
 
     <Button
