@@ -143,4 +143,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author
 
 **Rifat Hossain**
-- GitHub: [@rifathossain472](https://github.com/rifathossain472)
+- GitHub: [@rifathossain472](https://github.com/rifatHossainDevs)
